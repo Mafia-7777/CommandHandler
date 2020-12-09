@@ -1,4 +1,6 @@
 {
     "useEnv": false,
-    "mainColor": 16747520
+    "mainColor": 16747520,
+    "prefix": ".",
+    "owner": "695520751842885672"
 }

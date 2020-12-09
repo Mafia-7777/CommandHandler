@@ -10,6 +10,6 @@ module.exports = class extends Base {
 
 
     async run(msg, args){
-        console.log(msg, args)
+        
     }
 }

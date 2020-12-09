@@ -1,6 +1,6 @@
 const ExtendedMap = require("extendedmap");
 
-module.exports = class{
+module.exports = class {
     constructor(cahce, schema){
         this.schema = schema;
 

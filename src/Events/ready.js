@@ -5,5 +5,7 @@ module.exports = class {
 
     async run(){
         console.log(`${this.bot.user.tag} is ready`);
+        
+        this.bot.removeListener("ready");
     }
 }

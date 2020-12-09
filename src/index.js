@@ -1,11 +1,14 @@
 const config = require("./Config.json");
 
-let botToken;
+let botToken,
+dbConnect;
 if(config.useEnv == true){
     botToken = process.env.botToken;
+    dbConnect = process.env.dbConnect;
 }else{
     const Secrets = require("./Secrets.json");
     botToken = Secrets.botToken;
+    dbConnect = Secrets.dbConnect;
 }
 
 
@@ -54,6 +57,13 @@ init = async () => {
             }
         }
     }
+
+    require("./Datebase/Init")({
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        autoIndex: true,
+        useFindAndModify: false
+    }, dbConnect);
 
     bot.connect();
 }

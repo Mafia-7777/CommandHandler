@@ -15,5 +15,9 @@ module.exports = eris => {
             }else return this._client.deleteMessage.call(this._client, this.channel.id, this.id, reason);
         }
     })
-
+    Object.defineProperty(eris.Message.prototype, "guild", {
+        get: function() {
+            return this.channel.guild;
+        }
+    })
 }

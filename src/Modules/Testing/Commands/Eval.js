@@ -40,6 +40,9 @@ module.exports = class extends Base {
 
         evaled = evaled.split(this.bot.secrets.botToken).join("botToken");
 
+        if(evaled.length > 1900) evaled = evaled.slice(0, 1900);
+
+
         msg.channel.send(`${Date.now() - startTime} \`\`\`js\n${evaled}\`\`\``);
     }
 }

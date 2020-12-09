@@ -15,6 +15,7 @@
   "homepage": "https://github.com/Mafia-boss-lvl-420/CommandHandler#readme",
   "dependencies": {
     "eris": "github:monke-dev/erisInlines",
-    "extendedmap": "^1.0.4"
+    "extendedmap": "^1.0.4",
+    "mongoose": "^5.11.6"
   }
 }

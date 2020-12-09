@@ -9,6 +9,7 @@ class ExtendedClient extends Client {
         this.aliases = new ExtendedMap();
 
         this.config = require("../Config.json");
+        this.secrets = require("../Secrets.json");
     };
 };
 

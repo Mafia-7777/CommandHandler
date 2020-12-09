@@ -12,12 +12,13 @@ module.exports = class {
 
         if(!msg.content.toLowerCase().startsWith(prefix.toLowerCase())) return;
 
-        let args = msg.content.split(/ +/)
-        let cmd = await this.bot.commands.get(args[0].toLowerCase().slice(prefix.length)) || await this.bot.aliases.get(args[0].toLowerCase().slice(prefix.length));
+        let args = msg.content.split(/ +/),
+        cmd = await this.bot.commands.get(args[0].toLowerCase().slice(prefix.length)) || await this.bot.aliases.get(args[0].toLowerCase().slice(prefix.length));
         if(!cmd) return;
 
         if(cmd.module == "Testing" && msg.author.id != this.bot.config.owner) return;
 
+        args = args.slice(1);
         cmd.run(msg, args).catch(() => {})
 
 

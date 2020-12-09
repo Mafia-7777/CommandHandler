@@ -9,11 +9,11 @@ if(config.useEnv == true){
 }
 
 
-const eris = require("eris");
-const fs = require("fs");
-const ExtendedClient = require("./Structures/Client");
+const eris = require("eris"),
+fs = require("fs"),
+ExtendedClient = require("./Structures/Client"),
 
-const bot = new ExtendedClient(botToken, {
+bot = new ExtendedClient(botToken, {
     allowedMentions: {
         users: true,
         roles: false,
@@ -29,9 +29,9 @@ const bot = new ExtendedClient(botToken, {
     getAllUsers: true,
     restMode: true,
     maxShards: "auto"
-});
+}),
 
-const init = async () => {
+init = async () => {
     const addOns = fs.readdirSync(__dirname + "/AddOns");
     for(const addOn of addOns) require(__dirname + "/AddOns/" + addOn)(eris);
     
